@@ -76,44 +76,71 @@ st.json(skills, expanded=False)
 st.markdown("---")
 
 
+# Custom CSS to remove link styles
+no_style_link = """
+<style>
+a.no-style-link {
+    text-decoration: none;
+    color: inherit;
+}
+a.no-style-link:hover {
+    color: #3A1078; /* Optional: Add a hover color if you want */
+}
+</style>
+"""
+
+# Apply the CSS
+st.markdown(no_style_link, unsafe_allow_html=True)
+
 # Projects 📽️
 st.header("Projects 📽️")
-projectList = st.columns(spec=4, gap="small", vertical_alignment="center")
+projectList = st.columns(4, gap="small")
 projectUrls = [
     "https://github.com/emon4075/Employee_Management",
     "https://github.com/emon4075/Data_Visualization_API",
     "https://github.com/emon4075/Q_SOLVE",
     "https://github.com/emon4075/Contact_Form",
 ]
-try:
-    with projectList[0]:
-        if st.button("Employee MS", type="primary"):
-            webbrowser.open(projectUrls[0], new=2)
-    with projectList[1]:
-        if st.button("Plotting API Data", type="primary"):
-            webbrowser.open(projectUrls[1], new=2)
-    with projectList[2]:
-        if st.button("Question Solve", type="primary"):
-            webbrowser.open(projectUrls[2], new=2)
-    with projectList[3]:
-        if st.button("Contact Form", type="primary"):
-            webbrowser.open(projectUrls[3], new=2)
-except:
-    pass
-else:
-    st.text("")
-    st.markdown("---")
 
+with projectList[0]:
+    if st.button("Employee MS"):
+        st.markdown(
+            '<a href="https://github.com/emon4075/Employee_Management" class="no-style-link" target="_blank">View Source Code</a>',
+            unsafe_allow_html=True,
+        )
+with projectList[1]:
+    if st.button("Plotting API Data"):
+        st.markdown(
+            '<a href="https://github.com/emon4075/Data_Visualization_API" class="no-style-link" target="_blank">View Source Code</a>',
+            unsafe_allow_html=True,
+        )
+with projectList[2]:
+    if st.button("Question Solve"):
+        st.markdown(
+            '<a href="https://github.com/emon4075/Q_SOLVE" class="no-style-link" target="_blank">View Source Code</a>',
+            unsafe_allow_html=True,
+        )
+with projectList[3]:
+    if st.button("Contact Form"):
+        st.markdown(
+            '<a href="https://github.com/emon4075/Contact_Form" class="no-style-link" target="_blank">View Source Code</a>',
+            unsafe_allow_html=True,
+        )
 
 # Articles ✍️
 st.header("Articles ✍️")
-articleList = st.columns(spec=2, gap="large", vertical_alignment="bottom")
+articleList = st.columns(2, gap="large")
 articleUrls = [
     "https://medium.com/@mdabdullahemon4075/generate-ssh-key-and-setup-for-git-e5867bd2083a"
 ]
+
 with articleList[0]:
-    if st.button(label="SSH Key"):
-        webbrowser.open(articleUrls[0], new=2)
+    if st.button("SSH Key"):
+        st.markdown(
+            '<a href="https://medium.com/@mdabdullahemon4075/generate-ssh-key-and-setup-for-git-e5867bd2083a" class="no-style-link" target="_blank">Read The Article</a>',
+            unsafe_allow_html=True,
+        )
+
 
 st.markdown("---")
 
