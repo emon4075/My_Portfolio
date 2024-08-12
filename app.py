@@ -150,3 +150,81 @@ with media[2]:
     )
 st.text("")
 st.markdown("---")
+
+
+# Contact Form
+st.header("Say Hello 🫂")
+st.text("")
+
+contact, animie = st.columns(spec=2, gap="small", vertical_alignment="center")
+with contact:
+    with st.form("My Form", clear_on_submit=True):
+        col1, col2 = st.columns(2)
+        f_name = col1.text_input(label="First Name", placeholder="First")
+        l_name = col2.text_input(label="Last Name", placeholder="Last")
+        email = st.text_input(label="Your Mail", placeholder="you_mail@example.com")
+        message = st.text_area(
+            label="Message", placeholder="Love is blind 😙", max_chars=200
+        )
+
+        submitted = st.form_submit_button("Submit")
+
+        if submitted:
+            if f_name == "" or l_name == "" or message == "" or email == "":
+                st.warning("Please fill out all fields.")
+            else:
+                st.success("Form submitted successfully!")
+                res = f"""
+                <div style="text-align: center;">
+                    <form action="https://formsubmit.co/66fe6238339c6f0fc2fd4814f28b2478" method="POST">
+                        <input type="hidden" name="First Name" value="{f_name}">
+                        <input type="hidden" name="Last Name" value="{l_name}">
+                        <input type="hidden" name="Message" value="{message}">
+                        <input type="hidden" name="Email" value="{email}">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="submit" value="Confirm" style="
+                            background-color: #D1E9F6;
+                            border: none;
+                            color: black;
+                            padding: 10px 20px;
+                            text-align: center;
+                            text-decoration: none;
+                            display: inline-block;
+                            font-size: 16px;
+                            margin: 4px 2px;
+                            cursor: pointer;
+                            border-radius: 4px;">
+                    </form>
+                </div>
+                """
+                st.markdown(res, unsafe_allow_html=True)
+
+with animie:
+    with open(r"waiting.json") as source:
+        animation = json.load(source)
+    st_lottie(animation, width=350, height=300)
+
+st.markdown("---")
+
+
+# Footer
+footer = """
+<style>
+.footer {
+    position: justify;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    color: #3A1078;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+}
+</style>
+<div class="footer">
+    <p>Made with 💖 by Emon</p>
+    <p>©️2024</p>
+</div>
+"""
+st.markdown(footer, unsafe_allow_html=True)
