@@ -94,38 +94,49 @@ st.markdown(no_style_link, unsafe_allow_html=True)
 
 # Projects 📽️
 st.header("Projects 📽️")
-projectList = st.columns(4, gap="small")
+projectList_1 = st.columns(4, gap="small")
 projectUrls = [
     "https://github.com/emon4075/Employee_Management",
     "https://github.com/emon4075/Data_Visualization_API",
     "https://github.com/emon4075/Q_SOLVE",
     "https://github.com/emon4075/Contact_Form",
+    "https://github.com/emon4075/EMS-GUI",
 ]
 
-with projectList[0]:
+with projectList_1[0]:
     if st.button("Employee MS"):
         st.markdown(
             '<a href="https://github.com/emon4075/Employee_Management" class="no-style-link" target="_blank">View Source Code</a>',
             unsafe_allow_html=True,
         )
-with projectList[1]:
+with projectList_1[1]:
     if st.button("Plotting API Data"):
         st.markdown(
             '<a href="https://github.com/emon4075/Data_Visualization_API" class="no-style-link" target="_blank">View Source Code</a>',
             unsafe_allow_html=True,
         )
-with projectList[2]:
+with projectList_1[2]:
     if st.button("Question Solve"):
         st.markdown(
             '<a href="https://github.com/emon4075/Q_SOLVE" class="no-style-link" target="_blank">View Source Code</a>',
             unsafe_allow_html=True,
         )
-with projectList[3]:
+with projectList_1[3]:
     if st.button("Contact Form"):
         st.markdown(
             '<a href="https://github.com/emon4075/Contact_Form" class="no-style-link" target="_blank">View Source Code</a>',
             unsafe_allow_html=True,
         )
+
+# Add New Projects Here
+projectList_2 = st.columns(4, gap="small")
+with projectList_2[0]:
+    if st.button("EMS GUI"):
+        st.markdown(
+            '<a href="https://github.com/emon4075/EMS-GUI" class="no-style-link" target="_blank">View Source Code</a>',
+            unsafe_allow_html=True,
+        )
+
 
 # Articles ✍️
 st.header("Articles ✍️")
@@ -143,6 +154,8 @@ with articleList[0]:
 
 
 st.markdown("---")
+
+# More Articles
 
 
 # Social Media Links
@@ -243,7 +256,7 @@ footer = """
     bottom: 0;
     width: 100%;
     background-color: white;
-    color: #3A1078;
+    color: #003754;
     text-align: center;
     padding: 10px 0;
     font-size: 14px;
