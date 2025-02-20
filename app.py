@@ -68,9 +68,10 @@ st.markdown("---")
 # Skills
 st.header("Skills 💪")
 skills = {
-    "Languages ✨": ["C", "CPP", "Java", "Python"],
-    "Tools 🔨": ["Git", "GitHub", "Linux", "LaTeX"],
-    "Editor ⌨️": ["VS Code", "NVim", "Zed"],
+    "Languages ✨": ["C", "CPP", "Java", "Python", "R"],
+    "Tools 🔨": ["Git", "GitHub", "LaTeX"],
+    "Editor ⌨️": ["VS Code", "NVim", "Zed", "Arduino"],
+    "Linux 🖥️": ["Ubuntu", "POP OS"],
 }
 st.json(skills, expanded=False)
 st.markdown("---")
@@ -140,15 +141,22 @@ with projectList_2[0]:
 
 # Articles ✍️
 st.header("Articles ✍️")
-articleList = st.columns(2, gap="large")
+articleList = st.columns(4, gap="large")
 articleUrls = [
-    "https://medium.com/@mdabdullahemon4075/generate-ssh-key-and-setup-for-git-e5867bd2083a"
+    "https://medium.com/@mdabdullahemon4075/generate-ssh-key-and-setup-for-git-e5867bd2083a",
+    "https://medium.com/@emon4075/manage-your-time-productivity-097b9e870928",
 ]
 
 with articleList[0]:
     if st.button("SSH Key"):
         st.markdown(
             '<a href="https://medium.com/@mdabdullahemon4075/generate-ssh-key-and-setup-for-git-e5867bd2083a" class="no-style-link" target="_blank">Read The Article</a>',
+            unsafe_allow_html=True,
+        )
+with articleList[1]:
+    if st.button("Manage Time"):
+        st.markdown(
+            '<a href="https://medium.com/@emon4075/manage-your-time-productivity-097b9e870928" class="no-style-link" target="_blank">Read The Article</a>',
             unsafe_allow_html=True,
         )
 
@@ -186,7 +194,7 @@ with media[1]:
     )
 with media[2]:
     st.markdown(
-        "[![Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@mdabdullahemon4075)"
+        "[![Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@emon4075)"
     )
 st.text("")
 st.markdown("---")
